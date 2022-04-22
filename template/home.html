@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for i in a %}
+<div class="card" style="width: 100%;">
+  <img src=''>
+  <div class="card-body">
+    {% if top == i.title or top == i.context %}
+    <h5 class="card-title" style="text-align: center; color: red;">{{i.title}}</h5>
+    <p class="card-text">{{i.context}}</p>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <a href="{% url 'oqi' i.pk %}" class="btn btn-primary me-md-2" type="button">Read....</a> 
+    {% else %}
+    <h5 class="card-title" style="text-align: center; color: blue;">{{i.title}}</h5>
+    <p class="card-text">{{i.context}}</p>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <a href="{% url 'oqi' i.pk %}" class="btn btn-primary me-md-2" type="button">Read....</a>  
+    {% endif %}
+    </div>
+    
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

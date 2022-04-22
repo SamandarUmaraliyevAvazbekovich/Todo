@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card" style="width: 100%;">
+  <img src=''>
+  <div class="card-body">
+    <h5 class="card-title" style="text-align: center; color: blue;">{{a.title}}</h5>
+    <p class="card-text">{{a.context}}</p>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <a href="{% url 'edit' a.pk %}" class="btn btn-primary me-md-2" type="button">Edit</a>
+      <a href="{% url 'del' a.pk %}" class="btn btn-primary me-md-2" type="button">Delete</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

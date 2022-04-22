@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST">
+	{% load crispy_forms_tags %}
+	{% csrf_token %}
+	{{form|crispy}}<br>
+	<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      
+	<button type="submit" class="btn btn-lg btn-primary" >Qoshish</button>
+      
+    </div>
+</form> 
+{% endblock %}
